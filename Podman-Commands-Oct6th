@@ -1,0 +1,62 @@
+   1 podman
+   2 podman --version
+   3 clear
+   4 podman create ubuntu /bin/bash
+   5 podman ps
+   6 podman machine start
+   7 podman create ubuntu /bin/bash
+   8 podman ps
+   9 podman ps -a
+  10 podman ps
+  11 podman images
+  12 clear
+  13 podman ps -a
+  14 podman start 7f04bc1ae732
+  15 podman ps -a
+  16 podman create -it --name sample-web ubuntu /bin/bash
+  17 podman ps -a
+  18 podman start sample-web
+  19 podman ps
+  20 podman exec -it sample-web /bin/bash
+  21 podman ps
+  22 podman run -it --name webserver ubuntu /bin/bash
+  23 podman ps
+  24 podman ps -a
+  25 podman run -it --name webserver ubuntu /bin/bash
+  26 podman run -td webserver1 ubuntu /bin/bash
+  27 podman run -td --name webserver1 ubuntu /bin/bash
+  28 podman ps
+  29 podman exec -it --name webserver1 /bin/bash
+  30 podman exec -it webserver1 /bin/bash
+  31 podman create -it --name A1 ubuntu /bin/bash
+  32 podman ps
+  33 podman ps -a
+  34 podman start A1
+  35 podman attach A1
+  36 podman ps
+  37 podman ps -a
+
+
+  podman run -d --name sonarqube -p 9000:9000 --platform linux/arm64 docker.io/library/sonarqube:latest
+   41 docker run -td --name webserver-nginx -p 8081:80 nginx
+  42 podman run -td --name webserver-nginx -p 8081:80 nginx
+  43 podman run -td --name sonarqube-cont -p 9001:9000 sonarqube
+  44 podman ps
+  45 podman ps
+  46 podman run -td --name sonarqube-cont1 -p 9002:9001 sonarqube
+  47 podman ps -a
+  48 podman ps
+  49 podman ps
+  50 podman pause eaaf34124fd9
+  51 podman stop eaaf34124fd9
+  52 `podman machine start
+  53 podman machine start
+  54 podman ps
+  55 podman stop webserver-nginx
+  56 podman ps -a
+  57 podman rm eaaf34124fd9
+  58 podman ps -a
+  59 podman images
+  60 podman rmi bf16bdcff9c9
+  61 podman rmi -f bf16bdcff9c9
+  62 podman images
