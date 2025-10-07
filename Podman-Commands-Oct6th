@@ -60,3 +60,18 @@
   60 podman rmi bf16bdcff9c9
   61 podman rmi -f bf16bdcff9c9
   62 podman images
+
+
+  ============================================
+
+   3 podman images
+   4 podman images
+   5 podman machine start
+   6 podman images
+   7 ls
+   8 podman build -t login-page:v1 .
+   9 podman build -t login-page:v1 .
+  10 podman build -t login-page:v1 .
+  11 podman images
+  12 podman run -d --name login-v1 -p 8084:80 login-page:v1
+  13 podman pss
