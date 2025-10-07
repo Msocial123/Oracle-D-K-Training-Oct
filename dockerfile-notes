@@ -73,3 +73,23 @@ Container life cycle
 	13. Podman rm:- it will delete the stopped containers only
 	14. Podman rm -f:- it will delete all running containers 
 Podman rmi:- it will delete the podman images
+
+
+# push and tag commands
+
+How to push images into registries 
+============================
+
+    1. Podman tag:- it will tag the image with ur registry username
+
+podman tag  <i-name>  <username/i-name>
+
+    2. Podman login or docker login 
+
+podman login docker.io
+
+docker login -u <username>
+
+    3. Podman push :- it will push image into the registry
+
+Podman  <tagged image name>
