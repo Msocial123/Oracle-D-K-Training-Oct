@@ -111,3 +111,25 @@
   54 podman images
   55 podman rmi login-page:v1
   56 podman images
+
+
+  =============================
+
+   85 podman tag login-page:v1 muralisocial123/login-page:v1
+  86 podman images
+  87 podman login -u muralisocial123
+  88 podman login -u docker.io/muralisocial123
+  89 podman login
+  90 podman login docker.io
+  91 podman push muralisocial123/login-page:v1
+  92 podman push docker.io/muralisocial123/login-page:v1
+  93 podman tag login-page:v1 muralisocial123/login-page:v1
+  94 podman push muralisocial123/login-page:v1
+  95 docker pull python:3.9.23
+  96 podman images
+  97 podman pull python:3.9.23
+  98 podman pull python:3.9.23
+  99 podman images
+ 100 podman tag python:3.9.23 muralisocial123/python:3.9.23
+ 101 podman images
+ 102 podman push muralisocial123/python:3.9.23
