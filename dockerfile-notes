@@ -1,0 +1,75 @@
+Dockerfile
+
+07 October 2025
+09:48
+
+RUN :- it will execute commands while building docker image
+
+apt update -y
+
+Yum update -y
+
+Npm install 
+
+RUN apt update -y
+
+RUN yum update -y
+
+RUN install npm 
+
+=========================
+
+CMD:-it will execute commands while creating the container
+
+node start
+
+node server.js
+
+node app.js
+
+Python app.py
+
+CMD node start
+
+CMD node server.js
+
+CMD node app.js
+
+
+podman run -d --name <c-name> -p <host-port>  container-port> <i-name>
+
+
+podman run:- it will do two things, firstly it will create the container, secondly it will start the container
+
+-d:- detached mode , you cant get any shell to interact with ur container, it is for prod use
+
+--name:- provide a name to the contaier
+
+-p :- port
+
+Host-port:- it will decide by the devops team, it can be anything , it should be unique 
+
+Container-port:- it will decide by the dev team and u can same port for n.no of containers
+
+i-name:- specify the image name
+
+
+
+Container life cycle 
+===============
+
+	1. podman create:- it will create the container only but it will not start any container 
+	2. Podman run:- it will pull the image, secondly will create the container, thirdly will start the container
+	3. Podman ps:- it will show you only running containers
+	4. Podman ps -a:- it will list all containers including running and stopped containers
+	5. Podman images:- to see images
+	6. Podman stop:- it will stop the container, it is going to stopping all running process in ur container
+	7. Podman restart:- it will restart the container
+	8. Podman pause:- it will pause the container , it will freeze the process 
+	9. Podman unpause:- it will unpause the container
+	10. Podman logs:- 
+	11. Podman exec -it:- To login into the container
+	12. Podman inspect: it will give complete details or information about the container
+	13. Podman rm:- it will delete the stopped containers only
+	14. Podman rm -f:- it will delete all running containers 
+Podman rmi:- it will delete the podman images

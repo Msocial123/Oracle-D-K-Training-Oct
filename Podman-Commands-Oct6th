@@ -75,3 +75,39 @@
   11 podman images
   12 podman run -d --name login-v1 -p 8084:80 login-page:v1
   13 podman pss
+
+  22 podman ps
+  23 podman ps
+  24 podman stop login-v1
+  25 podman ps
+  26 podman ps -a
+  27 podman restart login-v1
+  28 podman ps
+  29 podman pause signup-app
+  30 podman ps
+  31 podman ps -a
+  32 podman unpause signup-app
+  33 podman ps
+  34 podman logs login-v1
+  35 podman logs signup-app
+  36 podman exec -it signup-app bash
+  37 ls
+  38 podman ps
+  39 podman inspect login-v1
+  40 podman ps
+  41 podman stop signup-app
+  42 podman ps
+  43 podman ps -a
+  44 podman rm signup-app
+  45 podman ps -a
+  46 podman ps
+  47 podman rm -f login-v1
+  48 podman ps
+  49 podman ps -a
+  50 podman images
+  51 podman rmi signup-app:v1
+  52 podman rmi localhost/signup-app:v1
+  53 podman rmi signup-page:v1
+  54 podman images
+  55 podman rmi login-page:v1
+  56 podman images
