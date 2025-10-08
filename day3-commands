@@ -5,3 +5,33 @@
    9 history
   10 podman compose down
   11 podman ps -a
+
+  ==============================================================
+
+    13 podman run -it --name c1 -v /murali ubuntu /bin/bash
+  14 podman volume ls
+  15 podman inspect volume 9de8297c44e1d7a0c39b04d61f133b7923fb2dd9eccaa48f91b3bd3093d846e4
+  16 podman volume prune -f
+  17 podman volume ls
+  18 podman volume rm 9de8297c44e1d7a0c39b04d61f133b7923fb2dd9eccaa48f91b3bd3093d846e4
+  19 podman network create murali-network
+  20 podman network ls
+  21 podman run -dit --name c-1 --network murali-network alpine sh
+  22 podman run -dit --name c-2 --network murali-network alpine sh
+  23 podman ps
+  24 podman exec -it c-1 sh
+  25 podman rm $(podman ps -aq)
+  26 podman rm -f $(podman ps -aq)
+  27 podman ps -a
+  28 podman rm java-app
+  29 podman rm -f java-app
+  30 docker run -it --name c-1 -v /mohan ubuntu /bin/bash
+  31 podman run -it --name c-1 -v /mohan ubuntu /bin/bash
+  32 podman ps
+  33 podman ps -a
+  34 podman volume ls
+  35 podman rm c-1
+  36 podman ps -a
+  37 podman volume ls
+  38 podman inspect volume 6b7069efcb23246cd32d6b89d1ac81f07ca5acf11cae8eacca0ae75bcd02256f
+  39 cd /var/lib/containers/storage/
