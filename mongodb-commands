@@ -1,0 +1,11 @@
+# Below commands run inside the container only after login to the contianer using podman exec -it <c-name> bash
+
+mongosh
+
+show dbs
+
+use transactionhistory
+
+show collections
+
+db.transactions.find().pretty()

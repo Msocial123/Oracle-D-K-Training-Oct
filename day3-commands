@@ -1,0 +1,7 @@
+   5 podman compose up -d
+   6 podman images
+   7 podman ps
+   8 podman exec -it transaction-history-mongodb-1 bash
+   9 history
+  10 podman compose down
+  11 podman ps -a
