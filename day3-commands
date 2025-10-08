@@ -35,3 +35,9 @@
   37 podman volume ls
   38 podman inspect volume 6b7069efcb23246cd32d6b89d1ac81f07ca5acf11cae8eacca0ae75bcd02256f
   39 cd /var/lib/containers/storage/
+
+  =======================================
+
+    42 podman run -it --name c-2 -v murali:/flipkart ubuntu /bin/bash
+  43 podman volume ls
+  44 podman inspect volume murali
