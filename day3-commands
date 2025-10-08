@@ -41,3 +41,54 @@
     42 podman run -it --name c-2 -v murali:/flipkart ubuntu /bin/bash
   43 podman volume ls
   44 podman inspect volume murali
+
+  ======================================
+
+     11  cd /opt
+   12  ls
+   13  mkdir murali
+   14  ls
+   15  cd murali/
+   16  pwd
+   17  exit
+   18  ls
+   19  podman run -it --name c-1 -v /opt/murali:/meesho ubuntu /bin/bash
+   20  ls
+   21  podman volume ls
+   22  cd /opt/murali
+   23  ls
+   24  exit
+   25  pomdan ps -a
+   26  podman ps -a
+   27  podman rm c-1
+   28  podman ps -a
+   29  cd /opt
+   30  ls
+   31  cd murali/
+   32  ls
+   33  podman run -it --name d1 -v jiohostar:/jio ubuntu /bin/bash
+   34  ls
+   35  podman ps -a
+   36  ls
+   37  podman volume ls
+   38  podman inspect jiohostar
+   39  ls
+   40  podman run -it --name d2 --privileged --volumes-from d1 ubuntu /bin/bash
+   41  ls
+   42  cd /var/lib/containers/storage/volumes/
+   43  ls
+   44  cd jiohostar/
+   45  ks
+   46  ls
+   47  cd _data/
+   48  ls
+   49  exit
+   50  podman run -it --name d3 --privileged --volumes-from d1 ubuntu /bin/bash
+   51  cd /var/lib/containers/storage/volumes/jiohostar
+   52  ls
+   53  cd _data/
+   54  ls
+   55  podman volume ls
+   56  podman volume rm jiohostar
+   57  podman rm $(podman ps -aq)
+   58  podman volume rm jiohostar

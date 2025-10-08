@@ -1,0 +1,36 @@
+Podman Volumes
+==============
+
+	1. If any container got deleted or goes down wt will happen?
+
+	Ø App won't give any response
+	Ø You will get app down time
+	Ø You will loose ur app data, files and any imp info 
+
+
+	Ø You have to persistent app data
+	Ø By creating volumes you can persistent ur data
+
+Wt is volumes
+===========
+
+	Ø Volume is nothing but it’s a directory 
+	Ø You are going to declaring a directory as a volume
+	Ø You have to create volume along with the container 
+	Ø Once after container created it's difficult to attach a volume to the container
+	Ø Volume will be created in one container
+	Ø If you stop or delete any container still we can able to access volume
+	Ø You can share one volume across no.of containers
+	Ø Volume will not be included when you update an image
+	Ø Volumes are going to creating out of the file system 
+
+
+Types of volumes
+==============
+
+	Ø 3 type of  volumes are there
+
+
+	1. Anonymous volume:- there is any meaningful name to the volume
+	2. Named volume:- we are going to assigning a meaningful name to the volume
+Bind volume:- where you want to store ur data and you can able to choose the custom location.
