@@ -19,3 +19,13 @@
    47  podman ps
    48  podman exec -it d1 sh
    49  podman exec -it d2 sh
+
+   ====================================
+
+      51  podman run -d --name web --network host nginx
+   52  cd /etc/containers/
+   53  ls
+   54  vi registries.conf
+   55  podman run -d --name web --network host nginx
+   56  podman ps
+   57  podman inspect web
