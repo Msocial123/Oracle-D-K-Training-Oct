@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: meesho-ns
+
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ajio-ns
+
+---
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: flipkart-ns
+
+---
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: amazon-ns
+
+# k8s commands
+
+
+    4  kubectl get ns
+    5  kubectl get all -A
+    6  ls
+    7  kubectl create ns murali-ns
+    8  kubectl get ns
+    9  kubectl create ns mohan-ns
+   10  kubectl get ns
+   11  vi my-ns.yaml
+   12  ls
+   13  kubectl apply -f my-ns.yaml 
+   14  ls
+   15  kubectl get ns
+   16  vi my-ns.yaml 
+   17  kubectl apply -f my-ns.yaml 
+   18  kubectl get ns
