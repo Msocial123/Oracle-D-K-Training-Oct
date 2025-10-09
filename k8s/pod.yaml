@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ipl-app
+  namespace: murali-ns
+spec:
+  containers:
+    - name: ipl
+      image: muralisocial123/ipl:latest
+      ports:
+        - containerPort: 3000
+
+
+# pod commands
+
+63292  kubectl get pods gopi-ns
+63293  kubectl get pods -n
+63294  kubectl get pods -n gopi-ns
+63295  kubectl get pods 
+63296  kubectl get pods -n murali-ns
+63297  ls
+63298  vi pod.yaml
+63299  ls
+63300  kubectl apply -f pod.yaml 
+63301  kubectl get pods
+63302  kubectl get pods
+63303  kubectl get pods -n mayank-ns
+63304  kubectl get pods -n murali-ns
