@@ -1,0 +1,109 @@
+Network in podman 
+================
+
+	Ø It will provide container networking that allows container to communicate with each other.
+	Ø Each container is connected to a network interface 
+	Ø Podman uses CNI (container network interface) plugins 
+
+Types of network
+==============
+
+	1. Bridge
+  ========
+
+	Ø It is a default network 
+	Ø Whenever you launch any container podman will create the container under bridge network by default 
+	Ø Every container will get one ip add
+	Ø Container requires port mapping to access on a host.
+	Ø It is for prod use.
+	Ø Whenever containers create under bridge network they will communicate each other .
+
+
+	2. Host network
+  ==============
+
+	Ø It will share host network with the containers
+	Ø Containers will not get any ip add
+	Ø No need port mapping 
+	Ø No nat overhead
+	Ø No network isolation 
+
+
+	3. None network
+ ================
+
+	Ø It is completely disable networking
+	Ø No network interface
+	Ø There is no any communication with other containers
+
+
+Disadvantages of Podman & docker
+=============================
+
+	Ø  it won't support autoscaling feature:- 1. Horizontal AS:- it will increase servers, 2. vertical AS:- it will increase resources like cpu, ram, storage
+	Ø It won't support auto healing or self-healing feature
+	Ø Load balancing will not support by Podman or docker
+	Ø Containers are lightweight
+
+K8s
+===
+
+	Ø It is a containerization management tool and orchestration tool
+
+History 
+======
+	Ø In 2013 google introduced k8s into the market 
+	Ø Initially k8s was not open source 
+	Ø In 2014 google has donated this k8s to CNCF(cloud native computing foundation)
+	Ø Now k8s is managing by CNCF
+
+Cluster:- combination of nodes
+Node:- vm 
+
+K8S features 
+==========
+
+	1. Auto scaling 
+	2. Load balancing 
+	3. Auto healing 
+	4. Platform independent: k8s supports all os and any cloud provider
+	5. Roll back:- to switch to previous version 
+	6. Fault tolerance:- node or pod fails k8s will notify you
+	7. Health monitoring of containers:- 
+	8. Orchestration:- it will be act as a manger to manager k8s objects or resources
+
+Cluster
+======
+
+	Ø Every cluster has two type of nodes
+
+Pod:- it is a smallest deployable unit where we are going to managing the container.
+
+	1. Master node or control plane
+	2. Worker node
+
+
+	1. Master node:- it will manage entire cluster and it is responsible to make available worker nodes and entire cluster resources are going to managing by master node only
+	2. Master node has 4 components 
+
+	a. API server:- it is an entry point of cluster , whenever you enter any command the first request will go to the api server only 
+	b. Etcd:- it will store entire cluster info and it will be act as a database for the cluster.
+	c. Scheduler :- it will schedule all tasks within the cluster and it will decide when and where the resource should be create.
+	d. Controller manager :- firstly it will collect data/info from api server and all resources are controlling by controller manager only within the cluster.
+
+
+	2. Worker node:- it is a mediator who manages and takes care of the containers and communicates with the master node and the entire app workload  is going to be deployed on a worker node only .
+
+	Ø It has 4 components 
+
+	1. Kubelet:- it is a primary component of wn and it is responsible to manage pods and also it will check pods health as well. If any pods goes down kubelet will replace with new pod for not getting any down time.
+	2. Kube-proxy:- it will contain all the network configuration of the entire cluster, like pod ip , node ip add  etc. and also kube-p is taking care of load balancing and routing which comes under network configuration.
+	3. Pod:- it is a smallest deployable unit where we are going to managing the container.
+	4. Container engine :- it will provide runtime env to run the containers in a cluster (pod) and it will run container in a cluster.
+
+
+	1. Imperative style:- using commands or cli is called imperative style
+	2. Declarative style:- using yaml or manifest files if u create any resource is called declarative style
+
+
+Kubectl :- it is a cli how we are going to communicating with the cluster.
