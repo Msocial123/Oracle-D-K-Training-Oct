@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: ipl-replica
+  namespace: murali-ns
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ipl
+  template:
+    metadata:
+      labels:
+        app: ipl
+    spec:
+      containers:
+        - name: ipl-app
+          image: muralisocial123/ipl:latest
+          ports:
+            - containerPort: 3000
+
+# replicaset commands
+
+174480  vi replicaset.yaml
+174481  ls
+174482  cat replicaset.yaml 
+174483  ls
+174484  nano replicaset.yaml
+174485  ls
+174486  kubectl get rs -n murali-ns
+174487  kubectl get rs -A
+174488  ls
+174489  kubectl get rs -n mathew-ns
+174490  kubectl apply -f replicaset.yaml 
+174491  kubectl get rs -n murali-ns
+174492  kubectl get all -n murali-ns
+174493  kubectl delete pod ipl-replica-2mrqb -n murali-ns
+174494  kubectl get all -n murali-ns
+174495  kubectl delete pods all -n murali-ns
+174496  kubectl delete pods --all -n murali-ns
+174497  kubectl get all -n murali-ns
+174498  vi replicaset.yaml 
+174499  ls
+174500  kubectl apply -f replicaset.yaml 
+174501  kubectl get pods -A
+174502  kubectl get all -n murali-ns
+174503  vi replicaset.yaml 
+174504  kubectl apply -f replicaset.yaml 
+174505  kubectl get all -n murali-ns
+174506  kubectl describe rs ipl-replica -n murali-ns
+174507  ls
+174508  kubectl get all -n murali-ns
+174509  kubectl delete rs ipl-replica -n murali-ns
+174510  kubectl get all -n murali-ns
