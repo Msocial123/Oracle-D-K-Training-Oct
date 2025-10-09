@@ -1,0 +1,21 @@
+   29  podman network ls
+   30  podman network create murali
+   31  podman network ls
+   32  podman network inspct murali
+   33  podman inspect network murali
+   34  podman volume ls
+   35  podman volume rm murali
+   36  podman rm c1
+   37  podman rm c2
+   38  podman volume rm murali
+   39  podman volume ls
+   40  podman network ls
+   41  podman inspect network murali
+   42  podman network inspect murali
+   43  podman run -dit --name d1 --network murali alpine sh
+   44  podman ps
+   45  podman inspect d1
+   46  podman run -dit --name d2 --network murali alpine sh
+   47  podman ps
+   48  podman exec -it d1 sh
+   49  podman exec -it d2 sh
