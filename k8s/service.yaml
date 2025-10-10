@@ -46,6 +46,21 @@ spec:
       targetPort: 3000  # container port number
   type: LoadBalancer
 
+
+# svc ExternalName
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ipl-svc
+  namespace: murali-ns
+spec:
+  selector:
+    app: ipl
+  type: ExternalName
+  externalName: flipkart.com
+
+
 # svc commands
 
 23213  vi service.yaml 
