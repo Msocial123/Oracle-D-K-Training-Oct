@@ -1,0 +1,42 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: murali-ipl-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: ipl-svc
+            port:
+              number: 3000
+
+# ingress installation and delete commands
+
+27998  kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.13.3/deploy/static/provider/cloud/deploy.yaml
+27995  kubectl delete -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.10.1/deploy/static/provider/cloud/deploy.yaml
+
+# ingress commands
+
+27993  kubectl get ingress -A
+27994  kubectl delete ingress murali-ipl--ingress -n murali-ns
+28001  kubectl get ns
+28002  kubectl get ns
+28003  kubectl get all -n ingress-nginx
+28004  kubectl get all -n ingress-nginx
+28005  ls
+28006  cat service.yaml 
+28007  cat service.yaml
+28008  vi ingress.yaml
+28009  ls
+28010  cat service.yaml 
+28011  cat ingress.yaml 
+28012  vi ingress.yaml 
+28013  kubectl apply -f ingress.yaml 
+28014  kubectl get ingress -n murali-ns
