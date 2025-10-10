@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ipl-svc
+  namespace: murali-ns
+spec:
+  selector:
+    app: ipl
+  ports:
+    - protocol: TCP
+      port: 3000     # svc port number 
+      targetPort: 3000  # container port number
+  type: ClusterIP
+
+# svc commands
+
+23213  vi service.yaml 
+23214  kubectl apply -f service.yaml 
+23215  ls
+23216  kubectl get svc -n murali-ns
+23217  kubectl get all -n sharath-ns
+23218  kubectl get all -n murali-ns
