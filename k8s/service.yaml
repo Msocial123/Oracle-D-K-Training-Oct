@@ -12,6 +12,24 @@ spec:
       targetPort: 3000  # container port number
   type: ClusterIP
 
+
+# svc type NodePort
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ipl-svc
+  namespace: murali-ns
+spec:
+  selector:
+    app: ipl
+  ports:
+    - protocol: TCP
+      port: 3000     # svc port number 
+      targetPort: 3000  # container port number
+      nodePort: 30080
+  type: NodePort
+
 # svc commands
 
 23213  vi service.yaml 
