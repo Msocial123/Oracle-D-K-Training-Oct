@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ipl-configmap
+data:
+  DB_HOST: "postgresql-db"
+  DB_PORT: "5432"
+
+
+# configmaps commands binaryData:
+  
+  53683  vi configmap.yaml
+53684  ls
+53685  cat configmap.yaml 
+53686  kubectl apply -f configmap.yaml 
+53687  nano configmap.yaml
+53688  kubectl get configmaps -n murali-ns
+53689  kubectl descirbe configmap ipl-configmap  -n murali-ns
+53690  kubectl describe configmap ipl-configmap  -n murali-ns
+53691  cat deployment.yaml 
+53692  kubectl apply -f configmap.yaml

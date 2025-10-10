@@ -18,6 +18,11 @@ spec:
           image: muralisocial123/ipl:latest
           ports:
             - containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: ipl-configmap
+            - secretRef:
+                name: ipl-secret
 
 # deployment commands
 
