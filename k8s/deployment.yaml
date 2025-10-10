@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ipl-deployment
+  namespace: murali-ns
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ipl
+  template:
+    metadata:
+      labels:
+        app: ipl
+    spec:
+      containers:
+        - name: ipl-app
+          image: muralisocial123/ipl:latest
+          ports:
+            - containerPort: 3000
+
+# deployment commands
+
+19233  vi deployment.yaml
+19234  ls
+19235  cat deployment.yaml 
+19236  ls
+19237  kubectl get all -n murali-ns
+19238  ls
+19239  kubectl apply -f deployment.yaml 
+19240  kubectl get deployment -n murali-ns
+19241  kubectl get all -n murali-ns
