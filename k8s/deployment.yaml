@@ -30,3 +30,32 @@ spec:
 19239  kubectl apply -f deployment.yaml 
 19240  kubectl get deployment -n murali-ns
 19241  kubectl get all -n murali-ns
+
+# Rolling updates commands status:
+  
+54052  kubectl apply -f deployment.yaml 
+54053  kubectl get all -n murali-ns
+54054  ls
+54055  kubectl describe deployment ipl-deployment -n murali-ns
+54056  kubectl describe deployement ipl-deployement -n dayal-ns
+54057  kubectl describe deployement ipl-deployment -n dayal-ns
+54058  kubectl describe deployment ipl-deployment -n dayal-ns
+54059  ls
+54060  vi deployment.yaml 
+54061  ls
+54062  cat deployment.yaml 
+54063  kubectl get all -n murali-ns
+54064  kubectl describe pod ipl-deployment-7dfc98dbf5-9c84x -n murali-ns
+54065  ls
+54066  kubectl apply -f deployment.yaml 
+54067  kubectl get all -n murali-ns
+54068  kubectl describe pod ipl-deployment-79646b9555-ctv7q -n murali-ns
+54069  ls
+54070  kubectl rollout deployment ipl-deployment -n murali-ns
+54071  kubectl undo rollout deployment ipl-deployment -n murali-ns
+54072  kubectl rollout undo deployment ipl-deployment -n murali-ns
+54073  kubectl get all -n murali-ns
+54074  kubectl describe pod ipl-deployment-7dfc98dbf5-c44jb -n murali-ns
+54075  ls
+54076  cat deployment.yaml 
+54077  kubectl describe deployment ipl-deployment -n murali-ns
