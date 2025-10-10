@@ -1,0 +1,136 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-deployment
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.labels.app }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.labels.app }}
+    spec:
+      containers:
+        - name: {{ .Values.name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports:
+            - containerPort: {{ .Values.port }}
+
+# svc yaml 
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-service
+  namespace: {{ .Values.namespace }}
+spec:
+  selector:
+    app: {{ .Values.labels.app }}
+  ports:
+    - protocol: TCP
+      port: {{ .Values.port }}    # svc port number 
+      targetPort: {{ .Values.port }}  # container port number
+  type: {{ .Values.type }}
+
+values.yaml
+
+namespace: murali-ns
+replicas: 3
+labels:
+  app: ipl
+name: ipl-app
+image:
+  repository: muralisocial123/ipl
+  tag: latest
+port: 3000
+type: LoadBalancer
+
+# helm commnads
+
+144290  curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+144291  ls
+144292  chmod 700 get_helm.sh
+144293  ls
+144294  ./get_helm.sh
+144295  helm version
+144296  helm version
+144297  ls
+144298  helm create murali-ipl-chart
+144299  ls
+144300  tree murali-ipl-chart/
+144301  apt install tree -y
+144302  sudo su
+144303  yum  install tree -y
+144304  ls
+144305  cd murali-ipl-chart/
+144306  ls
+144307  cat Chart.yaml 
+144308  ls
+144309  cd templates/
+144310  ls
+144311  vi deployment.yaml 
+144312  ls
+144313  rm -rf *
+144314  ls
+144315  cd ..
+144316  ls
+144317  vi values.yaml 
+144318  ls
+144319  > values.yaml 
+144320  cat values.yaml 
+144321  ls
+144322  ls
+144323  pwd
+144324  cat deployment.yaml
+144325  history
+144326  ls
+144327  clear
+144328  ls
+144329  ls
+144330  vi values.yaml 
+144331  ls
+144332  cat values.yaml 
+144333  ls
+144334  cd templates/
+144335  ls
+144336  vi deplyment.yaml
+144337  vi service.yaml
+144338  ls
+144339  cat service.yaml 
+144340  ls
+144341  cd ..
+144342  ls
+144343  cd ..
+144344  ls
+144345  kubectl delete all --all -n murali-ns
+144346  ls
+144347  kubectl get ingress -n murali-ns
+144348  kubectl delete ingress murali-ipl-ingress -n murali-ns
+144349  ls
+144350  kubectl get all -n murali-ns
+144351  ls
+144352  helm install murali-ipl-release --debug --dry-run murali-ipl-chart
+144353  helm install murali-ipl-release murali-ipl-chart
+144354  kubectl get all -n murali-ns
+144355  ls
+144356  cd murali-ipl-chart/
+144357  ls
+144358  vi values.yaml 
+144359  ls
+144360  cd ..
+144361  ls
+144362  ls
+144363  helm list -n murali-ns
+144364  helm list
+144365  ls
+144366  kubectl get all -n murali-ns
+144367  ls
+144368  helm upgrade murali-ipl-release murali-ipl-chart
+144369  kubectl get all -n murali-ns
+helm uninstall murali-ipl-release murali-ipl-chart
+
+
+

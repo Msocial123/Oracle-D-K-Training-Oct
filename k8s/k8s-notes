@@ -107,3 +107,105 @@ Pod:- it is a smallest deployable unit where we are going to managing the contai
 
 
 Kubectl :- it is a cli how we are going to communicating with the cluster.
+
+Svc types
+========
+
+	Ø Svc has 4 types
+
+	1. ClusterIP
+  ===========
+
+	Ø It will expose the app within a cluster only 
+	Ø It will give one static virtual ip add 
+	Ø You cant access app out of the cluster means it wont give any external ip add.
+	Ø It is for prod use.
+
+	2. NodePort
+ ============
+
+	Ø It will expose app within a cluster and outside of  the cluster.
+	Ø It will expose app on each worker node
+	Ø By using worker node external ip add you  can access the app outside of the cluster
+	Ø It has port limitation means k8s reserved some ports for svc type nodeport.
+	Ø The port range is between 30000 to 32767 
+	Ø It is not suggestible for prod n long term use
+	Ø It is only for testing for means whenever you don't have domain name and LB external ip add.
+
+
+	Ø To prevent range conflicts 
+	Ø System ports 0-1023
+	Ø Regular app ports 1024-29999
+
+
+	3. Load Balancer
+  ===============
+
+	Ø It will expose the app outside the cluster
+	Ø It will give an external ip add
+	Ø It doesn't have any port limitations 
+	Ø It is also not for prod but it is for temporary use
+	Ø It is cost.
+
+Flipkart app has 9 svc's
+Each svc should expose
+Each LB is 5$,  9*5=45$
+Client budget is 25$ only
+
+
+Solution is ingress.
+
+Ingress requires only one LB
+Ingress can expose no.of svc's with a single LB
+
+
+	4. ExternalName
+  ===============
+
+	Ø It wont create any cluster ip , proxy or lb
+	Ø Instead of creating a ip add, it will map service name inside the cluster to an external domain name,   flipkart.com:- svc-flipkart
+	Ø K8s does this by creating a CNAME record in the internal DNS.
+	Ø Mostly will use this db uri, endpoint and very rare case people will use this svc  type.
+
+Env  variables 
+===========
+
+	Ø Non sensitive info:- port no, db uri, db api end point
+	Ø Snesitive info:- db username, passwd
+
+Configmaps:- it will store all kind of non sensitive info
+
+
+Db-host: postgresql-db
+Db-port: 5432
+
+Key value pairs 
+
+
+Secrets:
+=======
+
+	Ø It will store data in key value pair
+	Ø It will store all kind of sensitive info
+	Ø Secrets never store hard code value
+	Ø Means you have to encode all ur env
+	Ø Means secrets can store encoded values only 
+
+
+Db-username: murali@526
+Db-password: Murali#$%@&*563
+
+Base64
+=====
+
+	Ø It will encode and decode any kind of value
+
+echo -n 'murali@526' | base64 
+
+
+Types of secrets 
+=============
+
+	1. Opaque:- custom key value pairs, app secrets  , passwd
+	2. Kubernetes.io/tls:- tls certificate nad key
+Kuberntes.io/ssh-auth:- ssh privt key like git/remote ssh access
